@@ -28,8 +28,7 @@ public class SecurityConfig {
                         .authenticated()
                 )
                 .oauth2ResourceServer(oauth2 ->
-                        oauth2.jwt(jwt ->
-                                jwt.jwtDecoder(jwtDecoder)
+                        oauth2.jwt(Customizer.withDefaults()
                         )
                 )
                 .build();
